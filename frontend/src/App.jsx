@@ -1,6 +1,9 @@
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
@@ -11,8 +14,9 @@ import BookAppointment from './pages/BookAppointment';
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
+
       <div className="container">
         <Routes>
           <Route path="/" element={<Dashboard />} />
@@ -25,8 +29,9 @@ function App() {
           <Route path="/book-appointment" element={<BookAppointment />} />
         </Routes>
       </div>
+
       <Footer />
-    </div>
+    </>
   );
 }
 
