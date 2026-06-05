@@ -8,37 +8,31 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "distributors")
-public class Distributor {
+@Table(name = "mentors")
+public class Mentor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
-
-    @Column(name = "city")
     private String city;
+    private String qualification;
 
     @Column(name = "experience_years")
     private int experienceYears;
 
-    @Column(name = "trades_completed")
-    private int tradesCompleted;
-
-    private String qualification;
     private String phone;
     private String email;
 
-    public Distributor() {
+    public Mentor() {
     }
 
-    public Distributor(String name, String city, String qualification, int experienceYears, int tradesCompleted, String phone, String email) {
+    public Mentor(String name, String city, String qualification, int experienceYears, String phone, String email) {
         this.name = name;
         this.city = city;
         this.qualification = qualification;
         this.experienceYears = experienceYears;
-        this.tradesCompleted = tradesCompleted;
         this.phone = phone;
         this.email = email;
     }
@@ -63,28 +57,20 @@ public class Distributor {
         this.city = city;
     }
 
-    public int getExperienceYears() {
-        return experienceYears;
-    }
-
-    public void setExperienceYears(int experienceYears) {
-        this.experienceYears = experienceYears;
-    }
-
-    public int getTradesCompleted() {
-        return tradesCompleted;
-    }
-
-    public void setTradesCompleted(int tradesCompleted) {
-        this.tradesCompleted = tradesCompleted;
-    }
-
     public String getQualification() {
         return qualification;
     }
 
     public void setQualification(String qualification) {
         this.qualification = qualification;
+    }
+
+    public int getExperienceYears() {
+        return experienceYears;
+    }
+
+    public void setExperienceYears(int experienceYears) {
+        this.experienceYears = experienceYears;
     }
 
     public String getPhone() {

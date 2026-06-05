@@ -10,7 +10,7 @@ function BookAppointment() {
   useEffect(() => {
     const fetchMentors = async () => {
       try {
-        const response = await mentorService.getAllMentors();
+        const response = await mentorService.getMentorsByCity('Hyderabad');
         setMentors(response.data);
       } catch (error) {
         console.error(error);
@@ -22,7 +22,7 @@ function BookAppointment() {
   const bookAppointment = async () => {
     try {
       await axios.post(
-        'http://localhost:8080/api/appointments/book',
+        'http://localhost:8081/api/appointments/book',
         { mentorId: Number(mentorId), scheduledDate },
         { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
       );
@@ -39,7 +39,7 @@ function BookAppointment() {
         <option value="">Select Mentor</option>
         {mentors.map((mentor) => (
           <option key={mentor.id} value={mentor.id}>
-            {mentor.name} - {mentor.location}
+            {mentor.name} - {mentor.city}
           </option>
         ))}
       </select>

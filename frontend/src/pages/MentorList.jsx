@@ -7,7 +7,7 @@ function MentorList() {
   useEffect(() => {
     const fetchMentors = async () => {
       try {
-        const response = await mentorService.getAllMentors();
+        const response = await mentorService.getMentorsByCity('Hyderabad');
         setMentors(response.data);
       } catch (error) {
         console.error(error);
@@ -24,7 +24,7 @@ function MentorList() {
           <h3>{mentor.name}</h3>
           <p>Qualification: {mentor.qualification}</p>
           <p>Experience: {mentor.experienceYears} Years</p>
-          <p>Location: {mentor.location}</p>
+          <p>Location: {mentor.city}</p>
         </div>
       ))}
     </div>

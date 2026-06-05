@@ -1,29 +1,22 @@
-import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
+import './Navbar.css';
 
 function Navbar() {
   return (
     <div className="navbar">
-      <NavLink to="/dashboard" style={{ color: 'white', marginRight: '20px', textDecoration: 'none' }}>
-        FinWise AI
-      </NavLink>
-      <NavLink to="/login" style={{ color: 'white', marginRight: '20px', textDecoration: 'none' }}>
-        Login
-      </NavLink>
-      <NavLink to="/register" style={{ color: 'white', marginRight: '20px', textDecoration: 'none' }}>
-        Register
-      </NavLink>
-      <NavLink to="/profile" style={{ color: 'white', marginRight: '20px', textDecoration: 'none' }}>
-        Profile
-      </NavLink>
-      <NavLink to="/recommendations" style={{ color: 'white', marginRight: '20px', textDecoration: 'none' }}>
-        Recommendations
-      </NavLink>
-      <NavLink to="/mentors" style={{ color: 'white', marginRight: '20px', textDecoration: 'none' }}>
-        Mentors
-      </NavLink>
-      <NavLink to="/book-appointment" style={{ color: 'white', textDecoration: 'none' }}>
-        Book Appointment
-      </NavLink>
+      <div className="logo-section">
+        <img src={logo} alt="FinWise AI logo" className="logo" />
+        <span>FinWise AI</span>
+      </div>
+      <div className="nav-links">
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/register">Register</Link>
+        <Link to="/recommendations">Recommendations</Link>
+        <Link to="/mentors">Mentors</Link>
+      </div>
     </div>
   );
 }

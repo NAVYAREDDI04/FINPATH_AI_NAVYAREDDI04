@@ -1,13 +1,18 @@
 import axios from 'axios';
 
-const getRecommendations = (userId) =>
-  axios.get(`http://localhost:8080/api/recommend/${userId}`);
+const API_BASE_URL = 'http://localhost:8081/api';
 
-const getAllMentors = () => axios.get('http://localhost:8080/api/distributors');
+const getRecommendations = (userId) =>
+  axios.get(`${API_BASE_URL}/recommend/${userId}`);
+
+const getAllMentors = () => axios.get(`${API_BASE_URL}/distributors`);
+const getMentorsByCity = (city) =>
+  axios.get(`${API_BASE_URL}/mentors/${encodeURIComponent(city)}`);
 
 const mentorService = {
   getRecommendations,
   getAllMentors,
+  getMentorsByCity,
 };
 
 export default mentorService;

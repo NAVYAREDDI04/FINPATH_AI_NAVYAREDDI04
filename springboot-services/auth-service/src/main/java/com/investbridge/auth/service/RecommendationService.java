@@ -1,14 +1,15 @@
 package com.investbridge.auth.service;
 
+import java.util.Collections;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.investbridge.auth.entity.Distributor;
 import com.investbridge.auth.entity.User;
 import com.investbridge.auth.repository.DistributorRepository;
 import com.investbridge.auth.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.Collections;
-import java.util.List;
 
 @Service
 public class RecommendationService {
@@ -24,7 +25,7 @@ public class RecommendationService {
         if (user.getProfession() != null && user.getExperienceLevel() != null
                 && user.getProfession().equalsIgnoreCase("Student")
                 && user.getExperienceLevel().equalsIgnoreCase("Beginner")) {
-            return distributorRepo.findByLocation(user.getLocation());
+            return distributorRepo.findByCity(user.getLocation());
         }
         return Collections.emptyList();
     }

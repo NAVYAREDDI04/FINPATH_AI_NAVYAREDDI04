@@ -1,13 +1,13 @@
 package com.investbridge.auth.service;
 
-import com.investbridge.auth.entity.Distributor;
-import com.investbridge.auth.entity.User;
-import com.investbridge.auth.repository.DistributorRepository;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.investbridge.auth.entity.Distributor;
+import com.investbridge.auth.repository.DistributorRepository;
 
 @Service
 public class ProfileAnalysisService {
@@ -36,7 +36,7 @@ public class ProfileAnalysisService {
 
         List<Distributor> mentors = new ArrayList<>();
         if (profession.equalsIgnoreCase("Student") && experience.equalsIgnoreCase("Beginner")) {
-            mentors = distributorRepository.findByLocation(location);
+            mentors = distributorRepository.findByCity(location);
         }
 
         return new ProfileAnalysisResult(recommendations, mentors);
