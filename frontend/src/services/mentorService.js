@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8081/api';
+const API_BASE_URL = '/api';
 
 const getRecommendations = (userId) =>
   axios.get(`${API_BASE_URL}/recommend/${userId}`);

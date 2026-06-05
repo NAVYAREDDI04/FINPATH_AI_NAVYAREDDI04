@@ -22,7 +22,7 @@ function BookAppointment() {
   const bookAppointment = async () => {
     try {
       await axios.post(
-        'http://localhost:8081/api/appointments/book',
+        '/api/appointments/book',
         { mentorId: Number(mentorId), scheduledDate },
         { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
       );

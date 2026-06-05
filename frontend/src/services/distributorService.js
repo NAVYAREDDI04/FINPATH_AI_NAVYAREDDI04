@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8081/api/distributors';
+const API_URL = '/api/distributors';
 
 const getDistributorsByCity = (city) =>
   axios.get(`${API_URL}/${encodeURIComponent(city)}`);
