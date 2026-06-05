@@ -5,7 +5,7 @@ const API_BASE_URL = 'http://localhost:8081/api';
 const getRecommendations = (userId) =>
   axios.get(`${API_BASE_URL}/recommend/${userId}`);
 
-const getAllMentors = () => axios.get(`${API_BASE_URL}/distributors`);
+const getAllMentors = () => axios.get(`${API_BASE_URL}/mentors`);
 const getMentorsByCity = (city) =>
   axios.get(`${API_BASE_URL}/mentors/${encodeURIComponent(city)}`);
 

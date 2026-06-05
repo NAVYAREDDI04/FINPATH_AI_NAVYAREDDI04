@@ -15,11 +15,12 @@ function Register() {
 
   const registerUser = async () => {
     try {
-      await authService.register(user);
-      alert('Registration Successful');
+      const response = await authService.register(user);
+      alert(response.data?.message || 'Registration Successful');
       navigate('/login');
     } catch (error) {
-      alert('Registration Failed');
+      const message = error?.response?.data?.message || error?.message || 'Registration Failed';
+      alert(message);
     }
   };
 

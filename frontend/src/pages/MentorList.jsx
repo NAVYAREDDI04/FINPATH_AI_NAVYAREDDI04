@@ -19,16 +19,20 @@ function MentorList() {
   return (
     <div>
       <h2>Mentor List</h2>
-      {mentors.map((mentor) => (
-        <div className="card" key={mentor.id}>
-          <h3>{mentor.name}</h3>
-          <p>Qualification: {mentor.qualification}</p>
-          <p>Experience: {mentor.experienceYears} Years</p>
-          <p>Clients Mentored: {mentor.clientsUnder}</p>
-          <p>Rating: {mentor.rating} / 5</p>
-          <p>Location: {mentor.city}</p>
-        </div>
-      ))}
+      {mentors.length === 0 ? (
+        <p>No mentors found yet. Please try again later.</p>
+      ) : (
+        mentors.map((mentor) => (
+          <div className="card" key={mentor.id}>
+            <h3>{mentor.name}</h3>
+            <p>Qualification: {mentor.qualification}</p>
+            <p>Experience: {mentor.experienceYears} Years</p>
+            <p>Clients Mentored: {mentor.clientsUnder}</p>
+            <p>Rating: {mentor.rating} / 5</p>
+            <p>Location: {mentor.city}</p>
+          </div>
+        ))
+      )}
     </div>
   );
 }
