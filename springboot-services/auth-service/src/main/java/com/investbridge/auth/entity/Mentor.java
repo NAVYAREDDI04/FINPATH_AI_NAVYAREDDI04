@@ -25,16 +25,23 @@ public class Mentor {
     private String phone;
     private String email;
 
+    @Column(name = "clients_under")
+    private int clientsUnder;
+
+    private double rating;
+
     public Mentor() {
     }
 
-    public Mentor(String name, String city, String qualification, int experienceYears, String phone, String email) {
+    public Mentor(String name, String city, String qualification, int experienceYears, String phone, String email, int clientsUnder, double rating) {
         this.name = name;
         this.city = city;
         this.qualification = qualification;
         this.experienceYears = experienceYears;
         this.phone = phone;
         this.email = email;
+        this.clientsUnder = clientsUnder;
+        this.rating = rating;
     }
 
     public Long getId() {
@@ -87,5 +94,21 @@ public class Mentor {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getClientsUnder() {
+        return clientsUnder;
+    }
+
+    public void setClientsUnder(int clientsUnder) {
+        this.clientsUnder = clientsUnder;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 }

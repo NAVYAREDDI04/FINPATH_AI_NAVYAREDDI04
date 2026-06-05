@@ -18,7 +18,7 @@ function Dashboard() {
           <h3>SENSEX</h3>
           <p>73,100 ▼ -0.5%</p>
         </div>
-        <div className="card maroon">
+        <div className="card maroon" style={{ backgroundColor: '#800000' }}>
           <h3>Mutual Funds</h3>
           <p>Stable Growth</p>
         </div>

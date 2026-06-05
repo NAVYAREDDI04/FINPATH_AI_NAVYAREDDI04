@@ -18,6 +18,11 @@ public class MentorController {
     @Autowired
     private MentorService mentorService;
 
+    @GetMapping
+    public List<Mentor> getAllMentors() {
+        return mentorService.getAllMentors();
+    }
+
     @GetMapping("/{city}")
     public List<Mentor> getMentorsByCity(@PathVariable String city) {
         return mentorService.getMentorsByCity(city);

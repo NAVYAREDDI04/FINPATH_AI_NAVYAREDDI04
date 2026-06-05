@@ -24,14 +24,14 @@
   color: white;
 }
 
-.green {
-  background: #00c853;
+.card.green {
+  background: #00c853 !important;
 }
 
-.red {
-  background: #d50000;
+.card.red {
+  background: #d50000 !important;
 }
 
-.maroon {
-  background: #800000;
+.card.maroon {
+  background: #800000 !important;
 }

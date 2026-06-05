@@ -17,4 +17,8 @@ public class MentorService {
     public List<Mentor> getMentorsByCity(String city) {
         return mentorRepository.findByCityIgnoreCase(city);
     }
+
+    public List<Mentor> getAllMentors() {
+        return mentorRepository.findAll();
+    }
 }
