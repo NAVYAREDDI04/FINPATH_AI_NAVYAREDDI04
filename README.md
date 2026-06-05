@@ -1,63 +1,38 @@
-# InvestBridge AI
+# FINPATH_AI_NAVYAREDDI04
 
-A comprehensive microservices-based platform for investment bridging with AI capabilities.
+AI-Powered Investment Learning, Risk Assessment, Portfolio Management and Mentor Matching Platform for Students and Beginner Investors.
 
 ## Project Structure
 
-```
-investbridge-ai/
-├── springboot-services/     # Java/Spring Boot microservices
-│   ├── auth-service/        # Authentication & Authorization service
-│   └── user-service/        # User management service
-│
-├── node-services/           # Node.js microservices
-│   ├── ai-service/          # AI/ML service
-│   └── notification-service/ # Notification & Messaging service
-│
-├── database/                # Database schemas and migrations
-│
-├── docs/                    # Documentation
-│
-└── postman/                 # Postman collections and environments
-```
+- `auth-service/`: Spring Boot backend for authentication, profile management, recommendations, mentor requests, and appointments.
+- `frontend/`: React frontend for login, registration, profile, recommendations, mentor listing, and booking appointments.
+- `docs/`: Documentation and design notes.
+- `database/`: Database scripts and schema support.
 
-## Getting Started
+## Setup
 
-### Prerequisites
-- Java 11+ (for Spring Boot services)
-- Node.js 14+ (for Node services)
-- Docker & Docker Compose
-- Maven (for Spring Boot)
-- npm/yarn (for Node services)
+### Backend
+1. Open a terminal in `springboot-services/auth-service`
+2. Run `./mvnw spring-boot:run`
+3. Backend starts on `http://localhost:8080`
 
-### Installation
+### Frontend
+1. Open a terminal in `frontend`
+2. Run `npm install`
+3. Run `npm start`
+4. Frontend runs on `http://localhost:3000`
 
-1. Clone the repository
-2. Navigate to each service directory
-3. Follow service-specific setup instructions in their README files
+## Features
 
-## Services
+- User registration and login with JWT
+- User profile view and update
+- Distributor and mentor recommendation
+- Mentor request submission
+- Appointment booking
+- CORS enabled for React frontend integration
 
-### Spring Boot Services
-- **auth-service**: Handles authentication and authorization
-- **user-service**: Manages user data and profiles
+## Notes
 
-### Node Services
-- **ai-service**: AI/ML functionality and model inference
-- **notification-service**: Email, SMS, and push notifications
+- The frontend stores the JWT token in `localStorage`.
+- Backend CORS is configured for `http://localhost:3000`.
 
-## Documentation
-
-See the `/docs` directory for detailed documentation on:
-- Architecture
-- API specifications
-- Setup guides
-- Deployment instructions
-
-## Contributing
-
-Please refer to CONTRIBUTING.md for guidelines.
-
-## License
-
-All rights reserved.
